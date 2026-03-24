@@ -15,8 +15,14 @@ pilha_t* criar_pilha(int capacidade) {
     pilha->elementos = malloc(sizeof(int) * capacidade);
     pilha->topo = -1;
     pilha->capacidade = capacidade;
+
+    return pilha;
 }
 
+    empilhar(pilha_t* pilha, int valor) {
+
+
+}
 
 // empilhar
 // desempilhar
