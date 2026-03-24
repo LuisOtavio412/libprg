@@ -19,7 +19,7 @@ pilha_t* criar_pilha(int capacidade) {
     return pilha;
 }
 
-    empilhar(pilha_t* pilha, int valor) {
+int empilhar(pilha_t* pilha, int valor) {
 
 
 }
