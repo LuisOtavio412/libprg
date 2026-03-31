@@ -8,7 +8,7 @@
    int empilhar(pilha_t* pilha, int valor);
    int desempilhar(pilha_t* pilha);
    int tamanho(pilha_t* pilha);
-   bool vazia(pilha_t* pilha);
+   bool vazia_p(pilha_t* pilha);
    int destruir_pilha(pilha_t* pilha);
 
 /*---    FILA   ---*/
@@ -16,6 +16,10 @@
    fila_t* criar_fila(int capacidade);
    int destruir_fila(fila_t* fila);
    int emfileirar(fila_t* fila, int valor);
-   int desemfileirar(fila_t* fila);
+   int desenfileirar(fila_t* fila);
+   bool cheia(fila_t* fila);
+   bool vazia_f(fila_t* fila);
+   int inicio(fila_t* fila);
+   int fim(fila_t* fila);
 
 #endif

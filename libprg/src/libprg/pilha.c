@@ -50,7 +50,7 @@ int desempilhar(pilha_t* pilha) {
 int tamanho(pilha_t* pilha) {
     return pilha->topo +1;
 }
-bool vazia(pilha_t* pilha) {
+bool vazia_p(pilha_t* pilha) {
     return pilha->topo < 0;
 }
 
