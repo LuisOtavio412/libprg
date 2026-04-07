@@ -24,9 +24,9 @@
    int destruir_fila(fila_t* fila);
 
 /*---    LISTAS    ---*/
-   typedef struct lista lista_linear_t;
-   lista_linear_t* criar_lista(int capacidade);
-   int destruir_lista(lista_linear_t* lista);
+   // typedef struct lista lista_linear_t;
+   // lista_linear_t* criar_lista(int capacidade);
+   // int destruir_lista(lista_linear_t* lista);
 
 
 
