@@ -14,7 +14,6 @@
 /*---    FILA   ---*/
    typedef struct fila fila_t;
    fila_t* criar_fila(int capacidade);
-   int lista_linear_t(fila_t* lista);
    int emfileirar(fila_t* fila, int valor);
    int desenfileirar(fila_t* fila);
    bool cheia(fila_t* fila);
@@ -24,10 +23,8 @@
    int destruir_fila(fila_t* fila);
 
 /*---    LISTAS    ---*/
-   // typedef struct lista lista_linear_t;
-   // lista_linear_t* criar_lista(int capacidade);
-   // int destruir_lista(lista_linear_t* lista);
-
+   typedef struct lista_linear lista_linear_t;
+   lista_linear_t* criar_lista(bool ordenada);
 
 
 

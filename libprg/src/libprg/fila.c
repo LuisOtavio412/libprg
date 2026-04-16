@@ -60,7 +60,7 @@ int destruir_fila(fila_t* fila) {
 }
 
 bool cheia(fila_t* fila) {
-    return fila->tamanho >=fila->capacidade;
+    return fila->tamanho >= fila->capacidade;
 }
 
 bool vazia_f(fila_t* fila) {
