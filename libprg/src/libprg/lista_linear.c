@@ -30,13 +30,13 @@ int destruir_lista(lista_linear_t *lista) {
     return 0;
 }
 
-buscar
-buscar_linear
-buscar_binario
-
-remover(lista_linear_t *lista, int alvo) {
-    int indice = buscar(lista, alvo);
-}
+// buscar
+// buscar_linear
+// buscar_binario
+//
+// remover(lista_linear_t *lista, int alvo) {
+//     int indice = buscar(lista, alvo);
+// }
 
 // buscar{
     // if (lista->ordenada) {
