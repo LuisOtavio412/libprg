@@ -2,7 +2,7 @@
 // Created by aluno on 28/04/2026.
 //
 #include <stdlib.h>
-
+#include <stdbool.h>
 #include "libprg/libprg.h"
 
 typedef struct no {
@@ -31,7 +31,46 @@ void inserir_lista_encadeada(no_t** inicio, int dado) {
     *inicio = novo;
 }
 
+no_t* buscar(no_t** inicio, int dado) {
+    no_t* atual = *inicio;
 
+    while (atual != NULL) {
+        if (atual->dado == dado) return atual;
+        atual = atual->proximo;
+    }
+    return NULL;
+}
+
+bool remover_encadeada(no_t** inicio, int dado) {
+    no_t* atual = *inicio;
+    no_t* anterior = NULL;
+
+    while (atual != NULL) {
+        if (atual->dado == dado) {
+            if (anterior == NULL) *inicio =atual->proximo;
+            else anterior->proximo = atual->proximo;
+
+            free(atual);
+            return true;
+        }
+
+        anterior = atual;
+        atual = atual->proximo;
+    }
+
+    return false;
+}
+
+void destruir_encadeada(no_t** inicio) {
+
+    no_t* atual = *inicio;
+
+    while (atual != NULL) {
+        no_t* proximo = atual->proximo;
+        free(atual);
+        atual = proximo;
+    }
+}
 
 // criar_lista_encadeada
 // inserir
