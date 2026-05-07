@@ -44,4 +44,7 @@
    bool remover_duplamente_encadeada(nod_t **inicio, int dado);
    void destruir_duplamente_encadeada(nod_t **inicio);
 
+/*---   Algoritmos de ordenação   ---*/
+   int* bubble_sort(int* vetor, int tamanho);
+
 #endif
