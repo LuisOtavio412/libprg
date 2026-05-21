@@ -2,7 +2,7 @@
 // Created by aluno on 19/05/2026.
 //
 #include <stdlib.h>
-
+#include <stdio.h>
 #include "libprg/libprg.h"
 
 typedef struct noa {
@@ -33,10 +33,36 @@ noa_t* adicionar_noa(noa_t* raiz, int dado) {
     }
     return raiz;
 }
-v
+
+void travessia_emordem(noa_t*  raiz) {
+    if (raiz != NULL) {
+        travessia_emordem(raiz->esquerda);
+        printf("%d",raiz->dado);
+        travessia_emordem(raiz->direita);
+    }
+}
+
+void travessia_preordem(noa_t* raiz) {
+    if (raiz != NULL) {
+        printf("%d",raiz->dado);
+        travessia_preordem(raiz->esquerda);
+        travessia_preordem(raiz->direita);
+    }
+}
+
+void travessia_posordem(noa_t* raiz) {
+    if (raiz != NULL) {
+        travessia_posordem(raiz->esquerda);
+        travessia_posordem(raiz->direita);
+        printf("%d",raiz->dado);
+    }
+}
 //no
 //criar_no
 //adicionar
 //remover
 //destruir
+//travessia_preordem
+//travessia_emordem
+//travessia_posordem
 
