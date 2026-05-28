@@ -57,6 +57,37 @@ void travessia_posordem(noa_t* raiz) {
         printf("%d",raiz->dado);
     }
 }
+
+noa_t* remover_noa(noa_t* raiz, int dado) {
+    if (raiz == NULL) return NULL;
+
+    if(dado < raiz->dado) {
+        raiz-> esquerda = remover_noa(raiz->esquerda, dado);
+    }else if (dado > raiz->dado) {
+        raiz->direita = remover_noa(raiz->direita, dado);
+    }else {
+        if (raiz->direita == NULL || raiz->esquerda == NULL) {// um ou zero filhos
+            noa_t* temp = raiz->esquerda != NULL? raiz->esquerda : raiz->direita;
+            if (temp == NULL) { //zero filhos
+                free(raiz);
+                return NULL;
+            }
+            free(raiz);//1 filho
+            return temp;
+        }else { //2 filhos
+            //encontra o menor valor da sub arvore da direita
+            noa_t* temp = raiz->direita;
+            while (temp && temp->esquerda != NULL) {
+                temp = temp->esquerda;
+            }
+            raiz->dado = temp->dado;
+            raiz->direita = remover_noa(raiz->direita, temp->dado);
+        }
+    }
+    return raiz;
+}
+
+
 //no
 //criar_no
 //adicionar

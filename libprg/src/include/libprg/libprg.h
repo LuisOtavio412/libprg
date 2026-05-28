@@ -62,6 +62,20 @@
    void travessia_emordem(noa_t* raiz);
    void travessia_preordem(noa_t* raiz);
    void travessia_posordem(noa_t* raiz);
+   noa_t* remover_noa(noa_t* raiz, int dado);
 
+/*---   Arvore-AVL   ---*/
+   typedef struct noavl noavl_t;
+   noavl_t *criar_noavl(int dado);
+   int altura_avl(noavl_t *raiz);
+   int fator_balanceamento(noavl_t *raiz);
+   noavl_t *adicionar_noavl(noavl_t *raiz, int dado);
+   noavl_t *rotacao_direita(noavl_t *V);
+   noavl_t* rotacao_dupla_direita(noavl_t *v);
+   noavl_t *rotacao_esquerda(noavl_t *V);
+   noavl_t* balancear(noavl_t* v);
+   noavl_t* rotacao_dupla_esquerda(noavl_t *v);
+   noa_t* remover_noa(noa_t* raiz, int dado);
+   noavl_t* remover_noavl(noavl_t* raiz, int dado);
 
 #endif
