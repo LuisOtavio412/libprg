@@ -87,6 +87,13 @@ noa_t* remover_noa(noa_t* raiz, int dado) {
     return raiz;
 }
 
+void destruir_noa(noa_t *raiz) {
+    if (raiz == NULL) return;
+
+    destruir_noa(raiz->esquerda);
+    destruir_noa(raiz->direita);
+    free(raiz);
+}
 
 //no
 //criar_no
