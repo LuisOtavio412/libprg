@@ -71,6 +71,7 @@
    void travessia_preordem(noa_t* raiz);
    void travessia_posordem(noa_t* raiz);
    noa_t* remover_noa(noa_t* raiz, int dado);
+   void destruir_noa(noa_t* raiz);
 
 /*---   Arvore-AVL   ---*/
    typedef struct noavl noavl_t;
