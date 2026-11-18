@@ -4,7 +4,8 @@
 #include "libprg/libprg.h"
 #include <stdlib.h>
 
-#define max(a, b) (a > b ? a : b);
+
+#define max(a, b) ((a) > (b) ? (a) : (b))
 
 typedef struct noavl {
     int dado;
@@ -48,6 +49,10 @@ noavl_t *adicionar_noavl(noavl_t *raiz, int dado) {
         raiz->esquerda = adicionar_noavl(raiz->esquerda, dado);
     }
 
+    if (raiz != NULL) {
+        raiz->altura = 1 + max(altura_avl(raiz->esquerda), altura_avl(raiz->direita));
+        raiz=balancear(raiz);
+    }
 
     return raiz;
 }
@@ -95,20 +100,21 @@ noavl_t* rotacao_dupla_esquerda(noavl_t *v) {
 noavl_t* balancear(noavl_t* v) {
     int fb = fator_balanceamento(v);
     if (fb > 1) {
-        if (fator_balanceamento(v->esquerda) > 0) {
+        if (fator_balanceamento(v->esquerda) >= 0) {
             return rotacao_direita(v);
         }
         return rotacao_dupla_direita(v);
     }
 
     if (fb < -1) {
-        if (fator_balanceamento(v->direita) < 0) {
+        if (fator_balanceamento(v->direita) <= 0) {
             return rotacao_esquerda(v);
         }
         return rotacao_dupla_esquerda(v);
     }
     return v;
 }
+
 noavl_t* remover_noavl(noavl_t* raiz, int dado) {
     if (raiz == NULL) return NULL;
 
@@ -142,6 +148,3 @@ noavl_t* remover_noavl(noavl_t* raiz, int dado) {
     return raiz;
 }
 
-
-//rotacao_dupla_esquerda
-//balancear

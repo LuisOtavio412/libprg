@@ -34,7 +34,7 @@ int* merge (int* vetor, int esquerda, int meio, int direita) {
         i = i + 1, k = k + 1;
     }
     while (j <= direita) {
-        aux[k] = vetor[i];
+        aux[k] = vetor[j];
         j = j + 1, k = k + 1;
     }
     for (int i = esquerda; i <= direita; i++) {
