@@ -86,5 +86,7 @@
    noavl_t* rotacao_dupla_esquerda(noavl_t *v);
    noa_t* remover_noa(noa_t* raiz, int dado);
    noavl_t* remover_noavl(noavl_t* raiz, int dado);
+   noavl_t* buscar_noavl(noavl_t* raiz, int id);
+   void destruir_avl(noavl_t* raiz);
 
 #endif

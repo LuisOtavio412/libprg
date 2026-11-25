@@ -148,3 +148,17 @@ noavl_t* remover_noavl(noavl_t* raiz, int dado) {
     return raiz;
 }
 
+noavl_t* buscar_noavl(noavl_t* raiz, int id) {
+    if (raiz == NULL) return NULL;
+    if (id == raiz->dado) return raiz;
+    if (id < raiz->dado) return buscar_noavl(raiz->esquerda, id);
+    return buscar_noavl(raiz->direita, id);
+}
+
+void destruir_avl(noavl_t* raiz) {
+    if (raiz == NULL) return;
+    destruir_avl(raiz->esquerda);
+    destruir_avl(raiz->direita);
+    free(raiz);
+}
+
